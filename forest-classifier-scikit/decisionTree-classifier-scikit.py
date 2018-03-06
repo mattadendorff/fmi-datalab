@@ -10,13 +10,7 @@ from sklearn.tree import export_graphviz
 
 
 # File Paths
-INPUT_PATH = "data/breast-cancer-wisconsin.data"
-OUTPUT_PATH = "data/breast-cancer-wisconsin.csv"
-
-# Headers
-HEADERS = ["CodeNumber", "ClumpThickness", "UniformityCellSize", "UniformityCellShape", "MarginalAdhesion",
-           "SingleEpithelialCellSize", "BareNuclei", "BlandChromatin", "NormalNucleoli", "Mitoses", "CancerType"]
-
+OUTPUT_PATH = "data/First_stab_data_values.csv"
 
 def read_data(path):
     """
@@ -145,6 +139,9 @@ def main():
     """
     # Load the csv file into pandas dataframe
     dataset = pd.read_csv(OUTPUT_PATH)
+
+    df = pd.read_csv('First_stab_data_values.csv')
+
     # Get basic statistics of the loaded dataset
     dataset_statistics(dataset)
 
