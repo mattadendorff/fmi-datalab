@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 from sklearn.decomposition import PCA
 import pandas as pd
+import numpy as np
 
 from imblearn.over_sampling import SMOTE
 
@@ -43,6 +44,10 @@ X, y = make_classification(n_classes=2, class_sep=2, weights=[0.2, 0.8],
                            n_informative=3, n_redundant=1, flip_y=0,
                            n_features=20, n_clusters_per_class=1,
                            n_samples=80, random_state=10)
+
+print(np.shape(X))
+print(np.shape(y))
+
                            
 # Instanciate a PCA object for the sake of easy visualisation
 pca = PCA(n_components=2)
@@ -59,6 +64,7 @@ y_resampled = []
 X_res_vis = []
 for method in sm:
     X_res, y_res = method.fit_sample(X, y)
+    print(np.shape(X_res))
     X_resampled.append(X_res)
     y_resampled.append(y_res)
     X_res_vis.append(pca.transform(X_res))
