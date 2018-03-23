@@ -14,7 +14,7 @@ components = (0, 1)
 
 pca.plot_rows(axes=components, color_by='class', ellipse_fill=True)
 pca.plot_correlation_circle(axes=components)
-# pca.plot_cumulative_inertia()
-# pca.plot_inertia()
+pca.plot_cumulative_inertia()
+pca.plot_inertia()
 
 plt.show()

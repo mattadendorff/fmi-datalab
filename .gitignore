@@ -143,3 +143,11 @@ venv.bak/
 /isolation/data/joined_test_cont.csv
 /pca/data/age_salary.csv
 /pca/data/height_weight.csv
+/pca/data/datalab_persona_run1_with_scale_cat_classless.csv
+/tnse/data/age_salary.csv
+/tnse/data/datalab_persona_run1_with_scale_cat.csv
+/tnse/data/datalab_persona_run1_with_scale.csv
+/tnse/data/datalab_persona_run1_with_scale_cat_classless.csv
+/tnse/data/datalab_persona_run1_with_scale_cont.csv
+/tnse/data/height_weight.csv
+/tnse/data/datalab_persona_run1_with_scale_weightHeight.csv
