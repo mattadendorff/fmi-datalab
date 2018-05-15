@@ -151,3 +151,13 @@ venv.bak/
 /tnse/data/datalab_persona_run1_with_scale_cont.csv
 /tnse/data/height_weight.csv
 /tnse/data/datalab_persona_run1_with_scale_weightHeight.csv
+/survival/BPE&INDdataForSurivivalModel.xlsx
+/survival/lapse-data-pure.xlsx
+/survival/Smoker_Gender_Full.pkl
+/survival/Smoker_Gender_All.pkl
+/survival/Smoker_Gender_BrokerComm.pkl
+/survival/Smoker_Gender_AAF.pkl
+/survival/Smoker_Gender_CPF.pkl
+/survival/Smoker_Gender_Premium.pkl
+/survival/Regression_Test_8_5_2018.pkl
+/scikit-survival/BPE&INDdataForSurivivalModel.xlsx

@@ -28,6 +28,7 @@ print(len(vals))
 
 vals=vals.values
 
+
 plt.scatter(vals[:,0], vals[:,1], c=cols)
 
 mca = prince.MCA(df2, n_components=-1)

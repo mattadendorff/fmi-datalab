@@ -1,4 +1,4 @@
-import tensorflow as tf
+#import tensorflow as tf
 import numpy as np
 import pandas as pd
 from sklearn.datasets import make_classification
@@ -24,7 +24,7 @@ data = df.values
 # sm = SMOTE(kind='svm')
 # data, target = sm.fit_sample(data, target)
 
-X_embedded = TSNE(n_components=2, init='pca', method='exact').fit_transform(data)
+X_embedded = TSNE(n_components=3, init='pca').fit_transform(data)
 
 vals = X_embedded
 
@@ -33,4 +33,4 @@ cols = ['g' if x == 0 else 'b' for x in target]
 plt.scatter(vals[:, 0], vals[:, 1], c=cols)
 plt.show()
 
-np.savetxt('TSNE_Embedding_Exact.txt', vals, delimiter=',')
+np.savetxt('TSNE_Embedding_Heuristic_3.txt', vals, delimiter=',')

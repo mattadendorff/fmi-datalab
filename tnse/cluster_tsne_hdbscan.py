@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.cluster import AffinityPropagation, Birch, KMeans, DBSCAN, AgglomerativeClustering
 import matplotlib.pyplot as plt
 from sklearn import metrics
+import hdbscan
 
 X_n = np.genfromtxt('TSNE_Embedding_Exact.txt', delimiter=',')
 
@@ -15,10 +16,14 @@ target = df['FKSmoker'].values
 
 # af = Birch(threshold=2, branching_factor=110, n_clusters=None)
 # af = KMeans(n_clusters=30)
-af = AgglomerativeClustering(n_clusters=20)
-af.fit(X_n)
+# af = AgglomerativeClustering(n_clusters=5)
+# af.fit(X_n)
 # cluster_centers = af.cluster_centers_
-labels = af.labels_
+# labels = af.labels_
+
+clusterer = hdbscan.HDBSCAN(min_cluster_size=80, min_samples=1, metric='sqeuclidean')
+clusterer.fit(X_n)
+labels = clusterer.labels_
 
 for lab in set(labels):
 
@@ -28,9 +33,9 @@ for lab in set(labels):
 
 # np.savetxt('Post_cluster_labels.txt', np.array(labels))
 
-# n_clusters_ = len(cluster_centers)
+n_clusters_ = len(set(labels))
 
-# print('Estimated number of clusters: %d' % n_clusters_)
+print('Estimated number of clusters: %d' % n_clusters_)
 print("Silhouette Coefficient: %0.3f"
       % metrics.silhouette_score(X_n, labels, metric='sqeuclidean'))
 
